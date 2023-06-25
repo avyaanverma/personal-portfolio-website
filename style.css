@@ -79,7 +79,7 @@ body{
     margin-bottom: 10px;
     border-radius: 8px;
     font-size: 1em;
-    height: 2.2em;
+    height: 3em;
 
     display: flex;
     align-items: center;
@@ -167,5 +167,6 @@ body{
 .logo{
     width: 83px;
     height: 77px;
+    box-shadow: 2px 2px 1px;
     mix-blend-mode: darken;
 }
