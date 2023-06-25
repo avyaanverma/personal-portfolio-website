@@ -1,9 +1,9 @@
 // Select all images
 
-const images = document.querySelectorAll('.images img')
+const images = document.querySelectorAll('.images img');
 
 // Add a scroll event to the page
-window.addEventListener('scroll', () =>)  {
+window.addEventListener('scroll', () =>  {
     /*
         Move the images to the top by adding the scrolled
         amount and convrting it to a negative 
@@ -21,4 +21,4 @@ window.addEventListener('scroll', () =>)  {
    images[2].style.top = "-" + (window.scrollY/ 6) + "px";
    images[3].style.top = "-" + (window.scrollY/ 7) + "px";
 
-}
+});
