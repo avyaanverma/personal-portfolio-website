@@ -9,9 +9,12 @@ body{
     
     
 }
-.flower-text{
+
+.right> .flower-text{
     position: absolute;    
-    font-size: 6em;
+
+    font-size: 4em;
+
     font-family: 'Ysabeau Infant', sans-serif;
     justify-self: flex-end;
     align-self: center;
@@ -21,7 +24,7 @@ body{
 }
 .right> p {
     position: absolute;    
-    font-size: 2em;
+    font-size: 1.125em;
     font-family: 'Ysabeau Infant', sans-serif;
     justify-self: flex-end;
     align-self: flex-end;
@@ -34,65 +37,96 @@ body{
 }
 
 @media (max-width:1200px){
+    .main{
+        grid-template-rows:4fr 6fr ;
+    }
+    .pfp{
+        align-self: center;
+    }
     .flower-text{
-        font-size: 4em;
+        font-size: 1em;
+        text-shadow: 2px 2px #302e2e;       
     }  
     .right> p {
            
         font-size: 2em;
-        
-        
+
+        font-weight: 800;
+        text-shadow: 1px 1px #000000;
     }
+
+    
 }
 @media (max-width:800px){
     .flower-text{
-        font-size: 3em;
+        font-size: 1em;
     }
     .right> p {
            
-        font-size: 1.5em; 
+        font-size: 1.125em; 
     }
-    /* .header{
-        background-color: #A76F6F;
-
-            align-items: center;
-            gap: 0.8em;
-            flex-direction: column;
-            }     */
-    
 }
 
 .pfp{
+
     margin: 20px;
     width: 85%;
-    border-radius:8% ;
-    opacity: 0.9;
-    border: 6px solid #A76F6F;
+    opacity: 0.8;
+    
     box-shadow: 5px 5px 4px #c8d956,;
+    margin-bottom: 0px;
+
+    /* Blurring the image */
+    
+    box-shadow: 12px 29px 81px 0px rgba(120, 107, 107, 0.75);
+    border-radius: 10%;
 
 }
+.pfp:hover{
+    width: 90%;
+    cursor: pointer;
+}
 /* NAVBAR DESIGN VIA FLEX */
-.header{
-    background-color: #A76F6F;
+header{
+    background-color: #4C3D3D;
     color: #DAFFFB;
     box-shadow: 3px 8px 5px #2f1e1e;
     margin-bottom: 10px;
     border-radius: 8px;
     font-size: 1em;
     height: 3em;
-
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 0.8em;
+
+
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    opacity: 0.8888;
+
+}
+.left{
+
+    float: left;
+    width: 100%;
+    padding: 0px;
+    justify-self: center;
     
 }
-
+.right{
+    width:75%;
+    display: grid;
+}
 .home{
     color: #DAFFFB;
+    text-decoration: none;
     flex-direction: row;
     margin-right: auto;
     margin-left: 10px;
     flex: 0 2 400px;
+    text-shadow: 2px 2px #302e2e;
     
 }
 
@@ -105,6 +139,7 @@ body{
     text-shadow: 2px 2px 1px #001C30;
     padding: 0px;
     text-align: center;
+    
 }
 .nav{
     justify-content: flex-end;
@@ -117,41 +152,35 @@ body{
 
 .main{
     background-color: black; 
+    background-image: url("./images/img.png");
+    background-repeat:no-repeat;
+    background-position: 10px;
+    background-attachment: fixed;
+
     color: #DAFFFB;
     display: grid;
 
-    border-top-left-radius:12px;
-    border-top-right-radius:12px;
-    border-bottom-left-radius:12px;   
-    border-bottom-right-radius:12px; 
+   border: 1px solid #fff;
 
     grid-template-columns:4fr 6fr ;
     column-gap: 0px; ;
-   
+    width: 100%;
     position: relative;
     /* text-align: center; */
 }
-.left{
-    float: left;
-    width: 100%;
-    padding: 0px;
-    justify-self: center;
-    
-}
-.right{
-    width:75%;
-    display: grid;
-}
+
+
 .flower{
     float: right;
     width: 100%;
     border-radius: 0.3%;
     opacity:1;
+
 }
 
 .footer{
     
-    background-color: #A76F6F;
+    background-color: #4C3D3D;
     color: #DAFFFB;
     border: 2px solid black;
     border-radius:6px;
@@ -161,12 +190,107 @@ body{
     color: #ffffff;
     text-shadow: 2px 2px 1px #001C30;
     /* padding: 20px; */
+    background-color: #352929;
+    text-transform: uppercase;
+    color: #DAFFFB;
+    box-shadow: 3px 8px 5px #2f1e1e;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 1em;
+
+    display: flex;
+    gap: 0.8em;
+    justify-content: center;
+    gap: 50%;
+
+    margin: 0;
+    padding: 20px;
 }
 
+.icons
+{
+    width: 25px; 
+}
+.aicons{
 
+}
+.icons:hover{
+    width: 30px;
+}
+.footerElements{
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    flex-direction: column;
+    gap: 30px;
+    
+    
+    text-decoration: none;
+}
+.footerElements > a {
+    text-decoration: none;
+    color: #a1bdc0;
+}
 .logo{
     width: 83px;
     height: 77px;
     box-shadow: 2px 2px 1px;
     mix-blend-mode: darken;
+}
+
+.section{
+    scroll-snap-align: center;
+    display: flex;
+
+    border: 1px solid #fff;
+    background-image: url("./images/swan.avif");
+    background-position: center;
+    background-size: cover; 
+    padding: 50px;
+
+    color: #DAFFFB;
+    border: 2px solid black;
+    border-radius:6px;
+    font-style: normal;
+    font-weight: lighter;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 2px 2px 1px #001C30;
+    justify-content: center;
+
+    flex-direction: column;
+    font-size: 0.5em;
+}
+.section:first-child{
+    margin-bottom: auto;
+}
+.section > h1{
+    text-transform: uppercase;
+}
+
+
+.section2{
+    display: flex;
+
+    border: 1px solid #fff;
+    background-image: url("./images/swan.avif");
+    height: 100vh;
+    background-position: center;
+    background-size: cover; 
+
+
+}
+.section3{
+    display: flex;
+
+    border: 1px solid #fff;
+    background-image: url("./images/aero.jpg") ;
+    background-position: center;
+    background-size: cover; 
+    /* width and heigh can be set  */
+    /* background-size: contain; */
+    height: 100vh;
+    scroll-snap-align: center;
+
+
 }
