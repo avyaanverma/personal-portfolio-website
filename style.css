@@ -2,6 +2,10 @@
     font-family: 'Pathway Extreme', sans-serif;
     margin: 0px;
     /* background-color: #EAB2A0; */
+    font-style: normal;
+    font-weight: lighter;
+    text-decoration: none;
+    
 }
 body{
     display: grid;
@@ -10,57 +14,81 @@ body{
     
 }
 
-.right> .flower-text{
-    position: absolute;    
+.main{
+    background-color: black; 
+    background-image: url("./images/img.png");
+    background-repeat:no-repeat;
+    background-position: 10px;
 
-    font-size: 4em;
+    color: #DAFFFB;
 
-    font-family: 'Ysabeau Infant', sans-serif;
-    justify-self: flex-end;
-    align-self: center;
-    text-align: center;
-    left: 51%;
-    color: #EAB2A0;   
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #fff;
 
-   
+    flex-wrap: nowrap;
+    column-gap: 0px; ;
+    width: 100%;
+    position: relative;
+    /* text-align: center; */
 }
+
 .type{
-    overflow: hidden;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    width: 100%;
+    /* overflow: hidden;
+    overflow: hidden; Ensures the content is not revealed until the animation */
     border-right: .15em solid rgb(55, 55, 55); /* The typwriter cursor */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    
-    animation: 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;    
+    flex-basis: 50vw;
+    padding: 0;
+    text-align: center;
+    font-size: 2em;
+
+    /* animation: 
     typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+    blink-caret .75s step-end infinite; */
 }
 /* The typing effect */
-@keyframes typing {
+/* @keyframes typing {
     from { width: 0%}
     to { width: 20% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    
-  }
-.right> p {
-    position: absolute;    
-    font-size: 1.5em; 
-    font-family: 'Ysabeau Infant', sans-serif;
-    justify-self: flex-end;
-    align-self: flex-end;
-    text-align: center;
-
-    left: 49%;
-    top: 68%;
-    color: #EAB2A0; 
-
-    order: 1;
-    
 }
 
+/* The typewriter cursor effect */
+/* @keyframes blink-caret {
+    from, to { border-color: transparent }
+    
+} */ */
+.right> .flower-text{
+    width: 100%;
+    font-family: 'Ysabeau Infant', sans-serif;       
+    color: #EAB2A0;    
+}
+.right> p {
+    font-size: 1.125em; 
+    font-weight: 800;
+    font-family: 'Ysabeau Infant', sans-serif;
+    text-align: center;
+    color: #EAB2A0; 
+}
+
+.left{
+
+    float: left;
+    width: 50%;
+    padding: 0px;
+    justify-self: center;
+    
+}
+.right{
+    
+    width:50%;
+    display: grid;
+
+}
 @media (max-width:1200px){
     .main{
         grid-template-rows:4fr 6fr ;
@@ -133,18 +161,6 @@ header{
     opacity: 0.8888;
 
 }
-.left{
-
-    float: left;
-    width: 100%;
-    padding: 0px;
-    justify-self: center;
-    
-}
-.right{
-    width:75%;
-    display: grid;
-}
 .home{
     color: #DAFFFB;
     text-decoration: none;
@@ -176,24 +192,6 @@ header{
     color: rgb(29, 123, 231);
 }
 
-.main{
-    background-color: black; 
-    background-image: url("./images/img.png");
-    background-repeat:no-repeat;
-    background-position: 10px;
-    background-attachment: fixed;
-
-    color: #DAFFFB;
-    display: flex;
-    justify-content: flex-start;
-    border: 1px solid #fff;
-
-    flex-wrap: nowrap;
-    column-gap: 0px; ;
-    width: 100%;
-    position: relative;
-    /* text-align: center; */
-}
 
 
 .flower{
@@ -265,31 +263,26 @@ header{
 }
 
 section{
-    scroll-snap-align: center;
     display: flex;
 
     border: 1px solid #fff;
-    background-image: url("./images/swan.avif");
-    background-position: center;
-    background-size: cover; 
+    
+   
     padding: 50px;
 
     color: #DAFFFB;
     border: 2px solid black;
-    border-radius:6px;
-    font-style: normal;
-    font-weight: lighter;
-    text-decoration: none;
-    color: #ffffff;
+
+    
     text-shadow: 2px 2px 1px #001C30;
     justify-content: flex-start;
     text-align: left;
 
     
 
-    height: 100vh;
+    height: 100vh 100vw;
     flex-direction: column;
-    font-size: 0.5em;
+    font-size: 1em;
 }
 .section:first-child{
     margin-bottom: auto;
@@ -300,29 +293,85 @@ section > h1{
     font-size: 3em;
 }
 
-
-.section2{
+.front,.back{
+    
+    width: 81%;
+    height: 89%;
+    
+    padding: 20px;
+    text-align: center;
+    border-radius: 10% 20%;
+    border: 1px solid #302e2e;
+    box-shadow: 1px 1px #2b2b2b;
+    position: absolute;
+    
+    backface-visibility: hidden;
+}
+.back{
+    transform: rotateY(180deg);
+    transition: transform 1500ms;
+    background-color: #302e2e;
+    transform: rotateY(180deg);
+}
+.container{
     display: flex;
+    width: 30vh;
+    height: 50vh;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.card{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
 
-    border: 1px solid #fff;
-    background-image: url("./images/swan.avif");
-    height: 100vh;
+    transition: transform 1500ms;
+}
+.container:hover > .card{
+    cursor:pointer;
+    transform: rotateY(180deg);
+    
+}
+.front{
+    background-image: url("./images/swan.jpg");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
-
-
+    position: relative;
+    
 }
-.section3{
+.flashcards{
+    display: flex;
+    flex-direction: row;
+}
+#box1{
+    background-image: url("./images/swan.jpg");
+    background-position: center;
+    background-size: cover; 
+}
+#box2{
+    text-transform: uppercase;
+    background-image: url("./images/aero.jpg");
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#box3{
     display: flex;
 
     border: 1px solid #fff;
-    background-image: url("./images/aero.jpg") ;
+    background-image: url("./images/devlast.png") ;
     background-position: center;
     background-size: cover; 
     /* width and heigh can be set  */
     /* background-size: contain; */
     height: 100vh;
-    scroll-snap-align: center;
 
 
 }
